@@ -3,9 +3,9 @@ package com.yogendra.config.jms;
 import com.atomikos.jms.AtomikosConnectionFactoryBean;
 import com.yogendra.util.EmailMessageConvertor;
 import jakarta.jms.ConnectionFactory;
+import org.apache.activemq.ActiveMQXAConnectionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.apache.activemq.ActiveMQXAConnectionFactory;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.converter.MessageConverter;
 

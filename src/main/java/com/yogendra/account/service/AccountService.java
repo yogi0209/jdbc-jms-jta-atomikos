@@ -20,7 +20,6 @@ public class AccountService {
     private final JmsTemplate jmsTemplate;
 
 
-
     public AccountService(AccountRepository accountRepository, JmsTemplate jmsTemplate) {
         this.accountRepository = accountRepository;
         this.jmsTemplate = jmsTemplate;
@@ -46,8 +45,8 @@ public class AccountService {
                 .convertAndSend("email",
                         new Email(senderAccount.getEmail(),
                                 String.format("""
-                        %s debited from account number %s
-                        """, senderUpdatedAmount.toString(), senderAccountNumber)
+                                        %s debited from account number %s
+                                        """, senderUpdatedAmount.toString(), senderAccountNumber)
                         )
                 );
 
@@ -58,20 +57,13 @@ public class AccountService {
                 .convertAndSend("email",
                         new Email(receiverAccount.getEmail(),
                                 String.format("""
-                        %s credited to account number %s
-                        """, receiverUpdatedAmount.toString(), receiverAccountNumber)
+                                        %s credited to account number %s
+                                        """, receiverUpdatedAmount.toString(), receiverAccountNumber)
                         )
                 );
 
     }
-
-    public static void main(String[] args) {
-        String account = "12424";
-        String s = String.format("""
-                Account Number : %s
-                """, account);
-        System.out.println(s);
-    }
+}
 
 
 
