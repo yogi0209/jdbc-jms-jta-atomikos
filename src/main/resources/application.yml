@@ -6,10 +6,10 @@ account:
   datasource:
     url: jdbc:postgresql://localhost:5432/account
     username: transaction-manager
-    password: tx135!@#$
+    password: xxxxx
 
 
 jms-broker:
   url: tcp://localhost:61616
   username: email
-  password: email-password
+  password: xxxxxx
